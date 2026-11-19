@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tukiblue: #0B2347;
+  --color-tukilblue: #74ACDF;
+  --color-tukiorange: #FF6B00;
+  --color-tukiorangedark: #E55300;
+  --color-tukiyellow: #FFB800;
+  --color-argentina: #75AADB;
+  --color-whatsapp: #25D366;
+
+  --font-sans: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+
+  --shadow-glow-orange: 0 0 35px rgba(255, 107, 0, 0.45);
+  --shadow-glow-wheel: 0 0 50px rgba(116, 172, 223, 0.35);
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.pulse-scale {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: pulse-scale 2s infinite ease-in-out;
+  }
+}
+
+.stadium-bg {
+  background: radial-gradient(circle at 50% 30%, #1a4d80 0%, #0d284a 55%, #071629 100%);
+}
+
+.wheel-shadow {
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+}
+
+.sunburst-bg {
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(116, 172, 223, 0.08) 0deg 15deg,
+    rgba(255, 255, 255, 0) 15deg 30deg
+  );
+}
