@@ -13,6 +13,7 @@ export interface WhatsAppRewardEventParams {
   promoCode: string;
   depositAmount: number;
   depositLabel: string;
+
   wheelSpun: boolean;
 }
 
