@@ -1,4 +1,5 @@
-export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID ?? "";
+export const FB_PIXEL_ID =
+  process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "2895936830782437";
 
 declare global {
   interface Window {
@@ -9,6 +10,9 @@ declare global {
 
 export interface WhatsAppRewardEventParams {
   rewardName: string;
+  promoCode: string;
+  depositAmount: number;
+  depositLabel: string;
   wheelSpun: boolean;
 }
 
@@ -20,10 +24,13 @@ export const trackPageView = (): void => {
 
 /**
  * Envía el evento al Pixel de Facebook al hacer clic en el botón de WhatsApp,
- * incluyendo el resultado que otorgó la ruleta.
+ * incluyendo el beneficio que otorgó la ruleta y el monto de carga elegido.
  */
 export const trackWhatsAppRewardClaim = ({
   rewardName,
+  promoCode,
+  depositAmount,
+  depositLabel,
   wheelSpun,
 }: WhatsAppRewardEventParams): void => {
   if (typeof window !== "undefined" && typeof window.fbq === "function") {
@@ -31,6 +38,10 @@ export const trackWhatsAppRewardClaim = ({
       content_name: rewardName,
       content_category: "Ruleta de la Suerte",
       reward: rewardName,
+      promo_code: promoCode,
+      deposit_tier: depositLabel,
+      value: depositAmount,
+      currency: "ARS",
       wheel_spun: wheelSpun,
     });
   }

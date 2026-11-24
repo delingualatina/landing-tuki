@@ -12,9 +12,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "¡Descubrí Tu Beneficio Exclusivo! | Rueda de la Suerte",
+  title: "¡Multiplicá Tu Suerte! | Rueda de la Suerte",
   description:
-    "Girá la Rueda de la Suerte y asegurá tu beneficio garantizado hoy mismo.",
+    "Girá la ruleta y desbloqueá un porcentaje extra exclusivo hoy mismo. Retiros inmediatos 24/7.",
 };
 
 export default function RootLayout({
